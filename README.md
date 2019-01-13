@@ -104,3 +104,7 @@ server {
 
 ## 其他
 欢迎反馈及探讨各种问题，同时请注意issue规则
+
+https://github.com/harsima/vue-backend
+
+https://blog.csdn.net/harsima/article/details/77949448
