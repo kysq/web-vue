@@ -21,22 +21,22 @@
 </template>
 
 <script>
-import vHeader from './Header.vue'
-import vSidenav from './Sidenav.vue'
+import vHeader from './Header.vue';
+import vSidenav from './Sidenav.vue';
 
 export default {
     data(){
         return {
-        }
+        };
     },
     computed: {
         layout(){
-            return this.$store.state.navbarPosition
+            return this.$store.state.navbarPosition;
         }
     },
     components:{
         vHeader,
         vSidenav
     }
-}
+};
 </script>

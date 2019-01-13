@@ -106,10 +106,10 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex';
 export default {
     data() {
-        return {}
+        return {};
     },
     computed: {
         ...mapState({
@@ -121,9 +121,9 @@ export default {
             toggleLang: 'changeLang'
         }),
         changeLang(val) {
-            if (val == this.lang) return
-            this.toggleLang(val)
+            if (val == this.lang) return;
+            this.toggleLang(val);
         }
     }
-}
+};
 </script>

@@ -12,18 +12,18 @@
 </template>
 
 <script>
-import chart1 from './chart1'
+import chart1 from './chart1';
 
 export default {
     data(){
         return {
             chartData: []
-        }
+        };
     },
     mounted(){
         this.$nextTick(() => {
-            this.getChartData()
-        })
+            this.getChartData();
+        });
     },
     methods: {
         getChartData(){
@@ -31,12 +31,12 @@ export default {
                 url: '/charts',
                 method: 'get',
             }).then(res => {
-                this.chartData = res
+                this.chartData = res;
             }).catch(err => {
-                this.$message.error(`获取数据失败，失败码：${err.response.status}`)
-            })
+                this.$message.error(`获取数据失败，失败码：${err.response.status}`);
+            });
         }
     },
     components: {chart1}
-}
+};
 </script>

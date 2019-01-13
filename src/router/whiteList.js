@@ -4,6 +4,6 @@ const whiteList = [
     '/register',
     '/notice',
     '/maintenance'
-]
+];
 
-export default whiteList
+export default whiteList;

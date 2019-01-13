@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import map1 from './map1'
+import map1 from './map1';
 export default {
     components: {map1}
-}
+};
 </script>
 
 <style lang="scss" scoped>

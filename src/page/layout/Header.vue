@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 export default {
     data() {
@@ -70,8 +70,8 @@ export default {
                         validator(rule, value, callback, source, options) {
                             var errors = [];
                             if(!/^[a-z0-9]+$/.test(value)) {
-                                console.log("不符合输入规则")
-                                errors.push("请输入字母或特殊字符")
+                                console.log('不符合输入规则');
+                                errors.push('请输入字母或特殊字符');
                             }
                             callback(errors);
                         }
@@ -85,15 +85,15 @@ export default {
                         validator(rule, value, callback, source, options) {
                             var errors = [];
                             if(!/^[a-z0-9]+$/.test(value)) {
-                                console.log("不符合输入规则")
-                                errors.push("请输入字母或特殊字符")
+                                console.log('不符合输入规则');
+                                errors.push('请输入字母或特殊字符');
                             }
                             callback(errors);
                         }
                     }
                 ]
             }
-        }
+        };
     },
     computed: {
         ...mapState({
@@ -107,32 +107,32 @@ export default {
             loadLang: 'loadLang'
         }),
         changeLang(val) {
-            if (val == this.lang) return
+            if (val == this.lang) return;
             // 改变语言后，因为表单校验的错误提示或者后台返回的信息等问题，需要进行页面刷新
             this.loadLang(val).then(() => {
-                window.location.reload()
-            })
+                window.location.reload();
+            });
         },
         userOperation(command){
             switch(command){
-                case 'logout': 
-                    this.logout()
-                    break
-                case 'editPaw':
-                    this.dialog.editPaw.show = true
-                    console.log('编辑密码')
-                    break
+            case 'logout': 
+                this.logout();
+                break;
+            case 'editPaw':
+                this.dialog.editPaw.show = true;
+                console.log('编辑密码');
+                break;
             }
         },
         logout() {
             this.sysLogout().then(() => {
-                this.$router.push('/login')
-            })
+                this.$router.push('/login');
+            });
         },
         editPawSubmit(){
             this.$refs.editPaw.validate((valid) => {
                 if (valid) {
-                    console.log("修改密码表单提交")
+                    console.log('修改密码表单提交');
                 } else {
                     console.log('error submit!!');
                     return false;
@@ -140,5 +140,5 @@ export default {
             });
         }
     }
-}
+};
 </script>

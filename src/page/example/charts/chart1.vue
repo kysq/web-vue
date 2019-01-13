@@ -3,9 +3,9 @@
 </template>
 
 <script>
-import lodash from 'lodash'
-import echarts from 'echarts'
-import '@/util/echarts.theme.default'
+import lodash from 'lodash';
+import echarts from 'echarts';
+import '@/util/echarts.theme.default';
 
 export default {
     data() {
@@ -38,7 +38,7 @@ export default {
                     ]
                 }
             }
-        }
+        };
     },
     props: {
         chartData: Array
@@ -46,27 +46,27 @@ export default {
     watch: {
         chartData(){
             if(this.chartData.length){
-                return this.chart.data = this.chartData
+                return this.chart.data = this.chartData;
             }
         },
         'chart.data'(){
-            this.draw()
+            this.draw();
         }
     },
     mounted(){
         this.$nextTick(() => {
-            this.chartsInit()
-        })
+            this.chartsInit();
+        });
     },
     methods: {
         // 初始化图表
         chartsInit(){
             // 创建图表对象
             if(!this.chart.target){
-                this.chart.target = echarts.init(document.getElementById('chart1'), 'westeros')
+                this.chart.target = echarts.init(document.getElementById('chart1'), 'westeros');
             }
             // 绘制默认图表
-            this.chart.target.setOption(this.chart.option)
+            this.chart.target.setOption(this.chart.option);
         },
         // 重绘
         draw() {
@@ -77,12 +77,12 @@ export default {
                         data: this.chart.data
                     }
                 ]
-            }
-            lodash.defaultsDeep(option, this.chart.option)
-            this.chart.target.setOption(option)
+            };
+            lodash.defaultsDeep(option, this.chart.option);
+            this.chart.target.setOption(option);
         }
     }
-}
+};
 </script>
 
 <style lang="scss" scoped>

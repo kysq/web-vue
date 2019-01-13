@@ -29,30 +29,30 @@ export default {
         pageSize:  {
             type: Number,
             default: function () {
-                return 10
+                return 10;
             }
         },
         paginationTotal: {
             type: Number,
             default: function () {
-                return 10
+                return 10;
             }
         },
         sizeChange: {
             type: Function,
             default: function(){
-                return null
+                return null;
             }
         },
         pageChange: {
             type: Function,
             default: function(){
-                return null
+                return null;
             }
         },
         pageLayout: {
             default: function (){
-                return 'total, sizes, prev, pager, next, jumper'
+                return 'total, sizes, prev, pager, next, jumper';
             }
         }
     },
@@ -60,17 +60,17 @@ export default {
         align(){
             let res;
             switch(this.paginationAlign){
-                case 'right': 
-                    res = 'textR'
-                    break
-                case 'center': 
-                    res = 'textC'
-                    break
-                default:
-                    res = ''
+            case 'right': 
+                res = 'textR';
+                break;
+            case 'center': 
+                res = 'textC';
+                break;
+            default:
+                res = '';
             }
-            return res
+            return res;
         }
     }
-}
+};
 </script>

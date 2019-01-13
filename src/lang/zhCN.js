@@ -1,4 +1,4 @@
-import zhElement from 'element-ui/lib/locale/lang/zh-CN'
+import zhElement from 'element-ui/lib/locale/lang/zh-CN';
 
 export default {
     global: {
@@ -16,4 +16,4 @@ export default {
         }
     },
     ...zhElement
-}
+};

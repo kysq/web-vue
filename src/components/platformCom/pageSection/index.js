@@ -1,7 +1,7 @@
-import PageSection from './main'
+import PageSection from './main';
 
 PageSection.install = function(Vue){  
-    Vue.component(PageSection.name, PageSection)
-}  
+    Vue.component(PageSection.name, PageSection);
+};  
 
 export default PageSection;

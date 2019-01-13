@@ -80,19 +80,19 @@ export default{
     data(){
         return {
 
-        }
+        };
     },
     computed: {
         layout(){
-            return this.$store.state.navbarPosition
+            return this.$store.state.navbarPosition;
         }
     },
     methods: {
         changeTheme(data){
-            this.$store.commit("setLayout", data)
+            this.$store.commit('setLayout', data);
         }
     }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -5,7 +5,7 @@ const asyncLayout = [
         component: () => import(/* webpackChunkName: 'index' */ '../page/layout'),
         children: []
     }
-]
+];
 
 const asyncRoute = [
     {
@@ -106,13 +106,13 @@ const asyncRoute = [
         },
         component: () => import(/* webpackChunkName: 'themeChange' */ '../page/themeChange')
     }
-]
+];
 
 const redirectRoute = [
     {
         path: '*',
         redirect: '/error/404'
     }
-]
+];
 
-export { asyncLayout, asyncRoute, redirectRoute}
+export { asyncLayout, asyncRoute, redirectRoute};

@@ -97,15 +97,15 @@ export default {
                 user: '',
                 region: ''
             }
-        }
+        };
     },
     methods: {
         sizeChange(size){
-            console.log('每页显示条数变更为:'+ size)
+            console.log('每页显示条数变更为:'+ size);
         },
         pageChange(curPage){
-            console.log('跳转到页面:' + curPage)
+            console.log('跳转到页面:' + curPage);
         }
     }
-}
+};
 </script>

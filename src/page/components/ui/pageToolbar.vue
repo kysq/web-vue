@@ -39,7 +39,7 @@ export default {
                     paramType: 'right/left; 默认right'
                 }
             ]
-        }
+        };
     }
-}
+};
 </script>

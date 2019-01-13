@@ -9,4 +9,4 @@ export default {
     theme: ''
     // 通知框等需要自动消失的时间
     // duration: 5000
-}
+};

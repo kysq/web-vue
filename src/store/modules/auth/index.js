@@ -1,28 +1,28 @@
-import Cookies from 'js-cookie'
-import axios from '@/util/ajax'
-import Auth from '@/util/auth'
+import Cookies from 'js-cookie';
+import axios from '@/util/ajax';
+import Auth from '@/util/auth';
 
 const state = {
     token: '',
     permissionList: []
-}
+};
 
 const mutations = {
     setPermissionList: (state, data) => {
-        state.permissionList = data
+        state.permissionList = data;
     },
 
     setToken: (state, data) => {
         if(data){
-            Auth.setToken(data)
-            Auth.setLoginStatus()
+            Auth.setToken(data);
+            Auth.setLoginStatus();
         } else {
-            Auth.removeToken()
-            Auth.removeLoginStatus()
+            Auth.removeToken();
+            Auth.removeLoginStatus();
         }
-        state.token = data
+        state.token = data;
     }
-}
+};
 
 const actions = {
     // 邮箱登录
@@ -36,32 +36,32 @@ const actions = {
                 }
             }).then(res => {
                 if(res.login){
-                    commit('setToken', res.token)
-                    commit('user/setName', res.name, { root: true })
+                    commit('setToken', res.token);
+                    commit('user/setName', res.name, { root: true });
                 }
-                resolve(res)
-            })
+                resolve(res);
+            });
         });
     },
 
     // 登出
     logout({commit}) {
         return new Promise((resolve) => {
-            commit('setToken', '')
-            commit('setPermissionList', [])
-            commit('user/setName', '', { root: true })
-            resolve()
-        })
+            commit('setToken', '');
+            commit('setPermissionList', []);
+            commit('user/setName', '', { root: true });
+            resolve();
+        });
     },
 
     // 重新登录
     relogin({commit}){
         return new Promise((resolve) => {
             // 根据Token进行重新登录
-            commit('setToken', Cookies.get('token'))
-            commit('user/setName', decodeURIComponent(Cookies.get('userName')), { root: true })
-            resolve()
-        })
+            commit('setToken', Cookies.get('token'));
+            commit('user/setName', decodeURIComponent(Cookies.get('userName')), { root: true });
+            resolve();
+        });
     },
 
     // 获取新Token
@@ -74,10 +74,10 @@ const actions = {
                     token: state.token
                 }
             }).then((res) =>{
-                commit("setToken", res.token)
-                resolve()
-            })
-        })
+                commit('setToken', res.token);
+                resolve();
+            });
+        });
     },
 
     // 获取该用户的权限列表——即菜单列表
@@ -88,16 +88,16 @@ const actions = {
                 methods: 'post',
                 data: {}
             }).then((res) => {
-                commit('setPermissionList', res)
-                resolve(res)
-            })
-        })
+                commit('setPermissionList', res);
+                resolve(res);
+            });
+        });
     }
-}
+};
 
 export default {
     namespaced: true,
     state,
     mutations,
     actions
-}
+};

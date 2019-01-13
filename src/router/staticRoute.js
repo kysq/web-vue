@@ -1,4 +1,4 @@
-const Layout = () => import(/* webpackChunkName: 'index' */ '../page/layout')
+const Layout = () => import(/* webpackChunkName: 'index' */ '../page/layout');
 
 const staticRoute = [
     {
@@ -41,6 +41,6 @@ const staticRoute = [
             }
         ]
     }
-]
+];
 
-export default staticRoute
+export default staticRoute;

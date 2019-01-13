@@ -36,7 +36,7 @@ export default {
                     paramType: 'String'
                 }
             ]
-        }
+        };
     }
-}
+};
 </script>

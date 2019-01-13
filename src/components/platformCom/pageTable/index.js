@@ -1,7 +1,7 @@
-import PageTable from './main'
+import PageTable from './main';
 
 PageTable.install = function(Vue){  
-    Vue.component(PageTable.name, PageTable)
-}  
+    Vue.component(PageTable.name, PageTable);
+};  
 
 export default PageTable;

@@ -59,10 +59,10 @@ export default {
                 head: [],
                 body: []
             }
-        }
+        };
     },
     mounted() {
-        this.getTableData()
+        this.getTableData();
     },
     methods: {
         // 获取table数据
@@ -72,16 +72,16 @@ export default {
                 type: 'post',
                 data: {}
             }).then(res => {
-                this.tableData.loading = false
-                this.tableData.head = res.head
-                this.tableData.body = res.body
+                this.tableData.loading = false;
+                this.tableData.head = res.head;
+                this.tableData.body = res.body;
             }).catch(err => {
-                this.$message.error(`获取数据失败，失败码：${err.response.status}`)
-            })
+                this.$message.error(`获取数据失败，失败码：${err.response.status}`);
+            });
         },
         search(){
-            console.log(`欲提交的数据   日期:${this.searchForm.time}  下拉条件:${this.searchForm.type}  文本: ${this.searchForm.text}`)
+            console.log(`欲提交的数据   日期:${this.searchForm.time}  下拉条件:${this.searchForm.type}  文本: ${this.searchForm.text}`);
         }
     }
-}
+};
 </script>

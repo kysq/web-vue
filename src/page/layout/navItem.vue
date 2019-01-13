@@ -13,5 +13,5 @@
 export default {
     name: 'navItem',
     props: ['item','navIndex']
-}
+};
 </script>

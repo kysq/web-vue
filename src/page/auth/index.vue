@@ -9,11 +9,11 @@
 export default {
     methods: {
         auth(){
-            this.$store.dispatch("user/getNewToken").then(() => {
-                console.log("已在授权页面获得授权")
-                this.$router.go(-1)
-            })
+            this.$store.dispatch('user/getNewToken').then(() => {
+                console.log('已在授权页面获得授权');
+                this.$router.go(-1);
+            });
         }
     }
-}
+};
 </script>

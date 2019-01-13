@@ -1,11 +1,11 @@
 module.exports = {
     "root": true,
-    "parser": "babel-eslint", 
+    "parser": "babel-eslint",
     "parserOptions": {
-        "sourceType": "module" 
+        "sourceType": "module"
     },
     "env": {
-        "browser": true, 
+        "browser": true,
         "commonjs": true,
         "node": true,
         "es6": true
@@ -14,7 +14,7 @@ module.exports = {
     // extends: "standard",
     // required to lint *.vue files
     "plugins": [
-        "html" 
+        "html"
     ],
     // check if imports actually resolve
     "settings": {
@@ -37,6 +37,10 @@ module.exports = {
         "no-unused-vars": "warn",
         "no-use-before-define": "error",
         "constructor-super": "warn",
-        "valid-typeof": "warn"
+        "valid-typeof": "warn",
+        'indent': [2, 4],
+        'semi': [2, 'always'],
+        'quotes': [1, 'single', 'avoid-escape'], // 引号风格
+        'semi-spacing': [0, { 'before': false, 'after': true }]// 分号前后空格
     }
 }

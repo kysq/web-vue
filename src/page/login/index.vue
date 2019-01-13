@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-import setTheme from "@/util/setTheme"
+import { mapState, mapActions } from 'vuex';
+import setTheme from '@/util/setTheme';
 
 export default {
     data() {
@@ -64,7 +64,7 @@ export default {
                 src: ''
             },
             sysMsg: ''
-        }
+        };
     },
     computed: {
         ...mapState({
@@ -73,13 +73,13 @@ export default {
         })
     },
     watch: {
-        "captcha.show"(val){
-            this.loginRules.captcha[0].required = val
+        'captcha.show'(val){
+            this.loginRules.captcha[0].required = val;
         }
     },
     beforeMount(){
         // 初始化错误信息。保证单独点击input时可以弹出正确的错误提示
-        this.setErrMsg()
+        this.setErrMsg();
     },
     methods: {
         ...mapActions({
@@ -94,36 +94,36 @@ export default {
                         password: this.loginForm.password
                     }).then(res => {
                         if(res.login){
-                            this.$router.push('home')
+                            this.$router.push('home');
                         } else {
-                            this.sysMsg = res.message
-                            this.captcha.show = true
-                            this.captcha.src = res.captcha
+                            this.sysMsg = res.message;
+                            this.captcha.show = true;
+                            this.captcha.src = res.captcha;
                         }
-                    })
+                    });
                 } else {
-                    return false
+                    return false;
                 }
             });
         },
         changeLang(val){
-            if(val == this.lang) return
+            if(val == this.lang) return;
             // 切换语言后重新加载语言包，并对重置登陆表单
             this.loadLang(val).then(() => {
-                this.setErrMsg()
-                this.$refs.loginForm.resetFields()
-            })
+                this.setErrMsg();
+                this.$refs.loginForm.resetFields();
+            });
         },
         changeTheme(val){
-            if(val == this.lang) return
-            setTheme(val)
-            this.$store.commit("setThemeColor", val)
+            if(val == this.lang) return;
+            setTheme(val);
+            this.$store.commit('setThemeColor', val);
         },
         setErrMsg(){
-            this.loginRules.name[0].message = this.$t('global.errMsg.inputRequired', {cont: this.$t('global.username')})
-            this.loginRules.password[0].message = this.$t('global.errMsg.inputRequired', {cont: this.$t('global.password')})
-            this.loginRules.captcha[0].message = this.$t('global.errMsg.inputRequired', {cont: this.$t('global.captcha')})
+            this.loginRules.name[0].message = this.$t('global.errMsg.inputRequired', {cont: this.$t('global.username')});
+            this.loginRules.password[0].message = this.$t('global.errMsg.inputRequired', {cont: this.$t('global.password')});
+            this.loginRules.captcha[0].message = this.$t('global.errMsg.inputRequired', {cont: this.$t('global.captcha')});
         }
     }
-}
+};
 </script>

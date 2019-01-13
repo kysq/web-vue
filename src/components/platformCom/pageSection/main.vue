@@ -11,5 +11,5 @@
 export default {
     name: 'vPageSection',
     props: ['title']
-}
+};
 </script>

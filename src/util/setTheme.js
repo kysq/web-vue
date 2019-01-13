@@ -1,14 +1,14 @@
 // 根据name匹配列表中的URL
 function matchFileName(list, name, callback){
     for(var i = 0; i < list.length; i++){
-        var el = list[i]
-        var fileName = el.substring(el.lastIndexOf("/")+1)
-        var reg = new RegExp("^"+ name + "(\\.\\w+)*\\.css$")
+        var el = list[i];
+        var fileName = el.substring(el.lastIndexOf('/')+1);
+        var reg = new RegExp('^'+ name + '(\\.\\w+)*\\.css$');
         if(reg.test(fileName)) {
             if(callback) {
-                callback(el)
+                callback(el);
             }
-            return false
+            return false;
         }
     }
 }
@@ -22,31 +22,31 @@ function changeStyle(file){
 
     // 生成当前加载的css地址数组
     for(var i = 0; i < styleList.length; i++){
-        urlList.push(styleList[i].getAttribute("href"))
+        urlList.push(styleList[i].getAttribute('href'));
     }
 
     // 判断是否有匹配的文件
     matchFileName(urlList, file, function(){
-        hasFile = true
-    })
+        hasFile = true;
+    });
 
     // 如果head中的样式表中没有对应的文件则向head中写入file
     if(!hasFile && window.themeURL){
         // 删除其他主题文件
         urlList.forEach(el => {
             if(window.themeURL.indexOf(el) >= 0){
-                var item = document.querySelectorAll(`link[href="${el}"]`)[0]
-                item.parentNode.removeChild(item)
+                var item = document.querySelectorAll(`link[href="${el}"]`)[0];
+                item.parentNode.removeChild(item);
             }
-        })
+        });
         // 插入新style
-        var style = document.createElement("link");
+        var style = document.createElement('link');
         matchFileName(window.themeURL, file, function(el){
-            style.href = el
-        })
-        style.rel = 'stylesheet'
-        style.type = 'text/css'
-        domHead.appendChild(style)
+            style.href = el;
+        });
+        style.rel = 'stylesheet';
+        style.type = 'text/css';
+        domHead.appendChild(style);
     }
 }
-export default changeStyle
+export default changeStyle;

@@ -72,7 +72,7 @@ export default {
                     paramType: 'String 默认值：total, sizes, prev, pager, next, jumper'
                 }
             ]
-        }
+        };
     }
-}
+};
 </script>

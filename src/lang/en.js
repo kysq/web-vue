@@ -1,4 +1,4 @@
-import enElement from 'element-ui/lib/locale/lang/en'
+import enElement from 'element-ui/lib/locale/lang/en';
 
 export default {
     global: {
@@ -16,4 +16,4 @@ export default {
         }
     },
     ...enElement
-}
+};

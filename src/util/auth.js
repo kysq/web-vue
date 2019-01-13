@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 const authToken = {
     // 当Token超时后采取何种策略
@@ -11,41 +11,41 @@ const authToken = {
 
     // Token是否超时
     hasToken: function(){
-        return Cookies.get('token')
+        return Cookies.get('token');
     },
 
     // 当前是否是登录状态
     isLogin: function(){
-        return Cookies.get(this.loginKey)
+        return Cookies.get(this.loginKey);
     },
 
     // 设置Token
     setToken: function(token){
         // 设置token，并填写有效期
-        var maxAge = new Date(new Date().getTime() + 30 * 1000)
+        var maxAge = new Date(new Date().getTime() + 30 * 1000);
         Cookies.set('token', token, {
             expires: maxAge
-        })
+        });
     },
 
     // 设置登录状态
     setLoginStatus: function(){
         // 设置超时登录时间，在该时间范围内没有任何请求操作则自动删除
-        var maxAge = new Date(new Date().getTime() + 30 * 60 * 1000)
+        var maxAge = new Date(new Date().getTime() + 30 * 60 * 1000);
         Cookies.set(this.loginKey, 'true', {
             expires: maxAge
-        })
+        });
     },
 
     // 移除Token
     removeToken: function(){
-        Cookies.remove('token')
+        Cookies.remove('token');
     },
 
     // 移除登录状态
     removeLoginStatus: function(){
-        Cookies.remove(this.loginKey)
+        Cookies.remove(this.loginKey);
     }
-}
+};
 
-export default authToken
+export default authToken;
